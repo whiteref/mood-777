@@ -44,8 +44,8 @@ export const generateConsistentImage = async (itemName: string): Promise<string 
     console.error("AI Image Generation Failed, using fallback:", e);
   }
 
-  // AI 이미지 생성 실패 시 감성적인 대체 이미지 반환
-  return `https://loremflickr.com/800/800/${encodeURIComponent(itemName)},aesthetic,luxury/all`;
+  // AI 이미지 생성 실패 시 여성용 핑크 화장품 세트 이미지 반환
+  return `https://loremflickr.com/800/800/cosmetic,pink,luxury,skincare/all`;
 };
 
 /**
