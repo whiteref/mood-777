@@ -20,6 +20,12 @@ export const translations = {
         category_act: "ACT",
         category_scent: "PERF",
         category_bloom: "FLOW",
+        out_of_energy: "오늘의 에너지를 다 썼어요",
+        recharge_needed: "충전이 필요해요. 내일 새로운 인연으로 다시 만나요!",
+        recharging: "에너지 충전 중...",
+        restart: "처음부터 다시 시작",
+        footer_desc: "본 웹 서비스는 사용자에게 최적의 리추얼을 제안하며, 제휴 마케팅을 통해 소정의 운영 수익을 창출할 수 있습니다.",
+        affiliate_disclosure: "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
     },
     EN: {
         title_line1: "Anchoring Your Day",
@@ -39,6 +45,12 @@ export const translations = {
         category_act: "ACT",
         category_scent: "PERF",
         category_bloom: "FLOW",
+        out_of_energy: "Out of Energy",
+        recharge_needed: "Recharge needed. Let's meet again tomorrow with some new ritual!",
+        recharging: "Recharging...",
+        restart: "Restart Ritual",
+        footer_desc: "This service suggests optimal rituals for users and may generate revenue through affiliate marketing.",
+        affiliate_disclosure: "This contains affiliate links. We may receive a commission for purchases made through these links."
     },
     JA: {
         title_line1: "今日を繋ぎ止める",
@@ -62,7 +74,7 @@ export const translations = {
         recharge_needed: "充電が必要です。明日、また新しい縁でお会いしましょう！",
         recharging: "エネルギー充電中...",
         restart: "最初からやり直す",
-        footer_desc: "本ウェブサービスはユーザーに最適なリチュアルを提案し、アフィリエイトマーケティングを通じて所定の運営収益を創出することがあります。",
-        affiliate_disclosure: "この投稿はAmazonアソシエイト・プログラム等のアフィリエイト活動の一環として、これに応じた一定額の手数料を受け取ることがあります。"
+        footer_desc: "本ウェブサービスはユーザーに最適なリチュアルを提案し、アフィリエイトマーケティングを通じて所定의 운영 수익을 창출할 수 있습니다.",
+        affiliate_disclosure: "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
     }
 };
