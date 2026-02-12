@@ -10,7 +10,7 @@ export interface ShoppingItem {
   itemImageUrl?: string;
 }
 
-const ART_DIRECTION = "High-end aesthetic lifestyle photography, soft studio lighting, premium mood, 8k resolution, centered composition, pastel background, minimalist style.";
+const ART_DIRECTION = "High-end aesthetic cosmetic photography, soft pink lighting, premium rose gold accents, feminine mood, 8k resolution, centered composition, pastel pink background, minimalist luxury style.";
 
 /**
  * 1,000개의 고정 아이템 외에, AI가 추천하는 '행운의 아이템'을 실시간으로 그려냅니다.
@@ -44,8 +44,8 @@ export const generateConsistentImage = async (itemName: string): Promise<string 
     console.error("AI Image Generation Failed, using fallback:", e);
   }
 
-  // AI 이미지 생성 실패 시 여성용 핑크 화장품 세트 이미지 반환
-  return `https://loremflickr.com/800/800/cosmetic,pink,luxury,skincare/all`;
+  // AI 이미지 생성 실패 시 또는 키워드 보강을 위해 여성용 핑크 화장품 세트 이미지 반환
+  return `https://loremflickr.com/800/800/cosmetic,pink,luxury,skincare,skincareset/all`;
 };
 
 /**
@@ -95,7 +95,12 @@ export const getRealtimeShoppingItems = async (
       JA: "すべての回答（アイテム名、推薦理由など）は日本語で作成してください。"
     };
 
-    const prompt = `당신은 라이프스타일 큐레이터입니다. 사용자가 선택한 리추얼 조합(${tea}, ${activity}, ${perfume}, ${flower})에 어울리는 '행운의 오브제' 한 가지를 추천해 주세요. 프리미엄하고 감성적인 아이템이어야 합니다.
+    const prompt = `당신은 럭셔리 라이프스타일 큐레이터입니다. 사용자가 선택한 리추얼 조합(${tea}, ${activity}, ${perfume}, ${flower})에 어울리는 '행운의 오브제' 한 가지를 추천해 주세요. 
+    
+    [중요 지침]
+    1. 반드시 '여성스럽고', '핑크빛 테마'의 프리미엄 화장품이나 인테리어 소품(예: 로즈 퀄츠 롤러, 핑크 무드등, 실크 슬립 등) 중에서 추천하세요. 
+    2. 중후하거나 딱딱한 조각상(곰, 사자 등)은 절대로 추천하지 마세요.
+    3. 모든 응답은 우아하고 품격 있는 톤앤매너를 유지하세요.
     
     ${langInstructions[lang]}
     
@@ -104,7 +109,7 @@ export const getRealtimeShoppingItems = async (
       "itemName": "아이템 이름",
       "itemPrice": "가격대(문자열)",
       "itemReason": "추천 사유 (2문장 이내)",
-      "searchKeyword": "쿠팡 검색을 위한 핵심 키워드 (영문 위주)"
+      "searchKeyword": "쿠팡 검색을 위한 핵심 키워드 (핑크, 화장품, 뷰티 관련 영문 위주)"
     }`;
 
     const response = await ai.models.generateContent({
