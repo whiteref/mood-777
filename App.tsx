@@ -238,7 +238,7 @@ const App: React.FC = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                       alt={lang === 'KR' ? item.data.name_kr : lang === 'EN' ? item.data.name_en : item.data.name_ja}
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-1544733422-251e539cae21?auto=format&fit=crop&w=400&q=80`;
+                        (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=400&q=80`;
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
