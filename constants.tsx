@@ -17,10 +17,12 @@ const CATEGORY_KEYWORDS: Record<string, string> = {
 const mapToSlotItem = (items: any[]): SlotItem[] => {
   return items.map(item => {
     const keyword = CATEGORY_KEYWORDS[item.category] || "lifestyle";
+    // 상업용 라이브러리의 중복 사진 방지를 위해 항목별 고유 숫자(lock)를 생성합니다.
+    const lockSeed = item.id.split('_')[1] || Math.floor(Math.random() * 1000);
     return {
       ...item,
-      // 더욱 정교한 이미지 매칭을 위해 카테고리별 영문 키워드와 개별 항목명을 조합합니다.
-      imageUrl: `https://loremflickr.com/800/1000/${keyword},${encodeURIComponent(item.name.split(' ')[0])},luxury/all`
+      // ?lock= 파라미터를 통해 모든 항목이 각기 다른 사진을 보장받도록 수정했습니다.
+      imageUrl: `https://loremflickr.com/800/1000/${keyword}/all?lock=${lockSeed}`
     };
   });
 };
