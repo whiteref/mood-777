@@ -19,6 +19,8 @@ const App: React.FC = () => {
   // Usage Guard State
   const [usageCount, setUsageCount] = useState(0);
   const [isLimitReached, setIsLimitReached] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [adminClicks, setAdminClicks] = useState(0);
 
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
@@ -32,12 +34,31 @@ const App: React.FC = () => {
     } else {
       const count = parseInt(storedCount || '0', 10);
       setUsageCount(count);
-      if (count >= USAGE_LIMIT) setIsLimitReached(true);
+
+      const adminStatus = localStorage.getItem('ritual_admin_mode') === 'true';
+      setIsAdmin(adminStatus);
+
+      if (!adminStatus && count >= USAGE_LIMIT) setIsLimitReached(true);
     }
   }, []);
 
+  const toggleAdmin = () => {
+    const nextClicks = adminClicks + 1;
+    if (nextClicks >= 7) {
+      const nextAdmin = !isAdmin;
+      setIsAdmin(nextAdmin);
+      localStorage.setItem('ritual_admin_mode', nextAdmin.toString());
+      setAdminClicks(0);
+      if (nextAdmin) setIsLimitReached(false);
+      alert(nextAdmin ? "관리자 모드 활성화: 무제한 사용 가능 ✨" : "관리자 모드 해제");
+    } else {
+      setAdminClicks(nextClicks);
+    }
+  };
+
   const spin = useCallback(() => {
-    if (slotState === SlotState.SPINNING || isLimitReached) return;
+    if (slotState === SlotState.SPINNING) return;
+    if (!isAdmin && isLimitReached) return;
 
     setIndices([
       Math.floor(Math.random() * TEAS.length),
@@ -67,10 +88,12 @@ const App: React.FC = () => {
         setSlotState(SlotState.FINISHED);
 
         // Update Usage
-        const newCount = usageCount + 1;
-        setUsageCount(newCount);
-        localStorage.setItem('ritual_usage_count', newCount.toString());
-        if (newCount >= USAGE_LIMIT) setIsLimitReached(true);
+        if (!isAdmin) {
+          const newCount = usageCount + 1;
+          setUsageCount(newCount);
+          localStorage.setItem('ritual_usage_count', newCount.toString());
+          if (newCount >= USAGE_LIMIT) setIsLimitReached(true);
+        }
 
         // AI 쇼핑 추천 엔진 가동
         setIsLoadingItem(true);
@@ -88,12 +111,17 @@ const App: React.FC = () => {
       <header className="pt-24 px-8 text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-pink-50/50 to-transparent -z-10" />
 
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md border border-pink-100 rounded-full shadow-sm mb-8 animate-float">
+        <div
+          onClick={toggleAdmin}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md border border-pink-100 rounded-full shadow-sm mb-8 animate-float cursor-pointer select-none"
+        >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
+            <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${isAdmin ? 'bg-indigo-400' : 'bg-pink-400'} opacity-75`}></span>
+            <span className={`relative inline-flex rounded-full h-2 w-2 ${isAdmin ? 'bg-indigo-500' : 'bg-pink-500'}`}></span>
           </span>
-          <span className="text-[10px] font-bold text-[#FF7EAD] tracking-[0.2em] uppercase">Private Ritual v3.0</span>
+          <span className={`text-[10px] font-bold ${isAdmin ? 'text-indigo-500' : 'text-[#FF7EAD]'} tracking-[0.2em] uppercase`}>
+            {isAdmin ? 'Admin Mode (Unlimited)' : 'Private Ritual v3.0'}
+          </span>
         </div>
 
         <h1 className="text-5xl md:text-6xl font-serif font-semibold leading-[1.1] mb-6 tracking-tight text-slate-800">
