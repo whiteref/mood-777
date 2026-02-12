@@ -15,10 +15,11 @@ const ART_DIRECTION = "High-end aesthetic lifestyle photography, soft studio lig
  * 1,000개의 고정 아이템 외에, AI가 추천하는 '행운의 아이템'을 실시간으로 그려냅니다.
  */
 export const generateConsistentImage = async (itemName: string): Promise<string | undefined> => {
-  if (!process.env.API_KEY) return undefined;
+  const apiKey = process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+  if (!apiKey) return undefined;
 
   try {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey });
     const imagePrompt = `${itemName}, ${ART_DIRECTION}`;
 
     const response = await ai.models.generateContent({
@@ -55,10 +56,20 @@ export const getRealtimeShoppingItems = async (
   perfume: string,
   flower: string
 ): Promise<ShoppingItem | null> => {
-  if (!process.env.API_KEY) return null;
+  const apiKey = process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+
+  if (!apiKey) {
+    return {
+      itemName: "Crystal Quartz Meditation Stone",
+      itemPrice: "₩24,500",
+      itemReason: "현재 인연의 에너지가 너무 강해 AI가 잠시 휴식 중입니다. 대신 당신의 평온을 지켜줄 크리스탈 원석을 준비했습니다.",
+      searchKeyword: "meditation crystal quartz",
+      itemImageUrl: "https://loremflickr.com/800/800/crystal,stone,aesthetic/all"
+    };
+  }
 
   try {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey });
     const prompt = `당신은 라이프스타일 큐레이터입니다. 사용자가 선택한 리추얼 조합(${tea}, ${activity}, ${perfume}, ${flower})에 어울리는 '행운의 오브제' 한 가지를 추천해 주세요. 프리미엄하고 감성적인 아이템이어야 합니다.`;
 
     const response = await ai.models.generateContent({
@@ -86,8 +97,15 @@ export const getRealtimeShoppingItems = async (
     const itemImageUrl = await generateConsistentImage(data.itemName);
 
     return { ...data, itemImageUrl };
-  } catch (e) {
+  } catch (e: any) {
     console.error("AI Shopping Recommendation Failed:", e);
-    return null;
+    // 429(Quota Exceeded) 또는 기타 에러 시 우아한 폴백 아이템 반환
+    return {
+      itemName: "Silk Eye Mask & Ritual Mist",
+      itemPrice: "₩32,000",
+      itemReason: "오늘의 인연은 매우 고요하고 아늑합니다. 깊은 휴식을 도와줄 실크 마스크와 미스트 세트를 추천해 드려요.",
+      searchKeyword: "silk eye mask aromatherapy mist",
+      itemImageUrl: `https://loremflickr.com/800/800/sleep,luxury,aesthetic/all`
+    };
   }
 };
