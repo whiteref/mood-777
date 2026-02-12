@@ -5,6 +5,7 @@ import { TEAS, ACTIVITIES, PERFUMES, FLOWERS } from './constants';
 import SlotReel from './components/SlotReel';
 import { getLocalCommentary } from './services/commentaryData';
 import { getRealtimeShoppingItems, ShoppingItem } from './services/gemini';
+import { translations, Language } from './translations';
 
 const USAGE_LIMIT = 5;
 
@@ -22,6 +23,9 @@ const App: React.FC = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [adminClicks, setAdminClicks] = useState(0);
 
+  // i18n State
+  const [lang, setLang] = useState<Language>('KR');
+
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
     const storedDate = localStorage.getItem('ritual_usage_date');
@@ -38,9 +42,17 @@ const App: React.FC = () => {
       const adminStatus = localStorage.getItem('ritual_admin_mode') === 'true';
       setIsAdmin(adminStatus);
 
+      const storedLang = localStorage.getItem('ritual_lang') as Language;
+      if (storedLang) setLang(storedLang);
+
       if (!adminStatus && count >= USAGE_LIMIT) setIsLimitReached(true);
     }
   }, []);
+
+  const changeLang = (newLang: Language) => {
+    setLang(newLang);
+    localStorage.setItem('ritual_lang', newLang);
+  };
 
   const toggleAdmin = () => {
     const nextClicks = adminClicks + 1;
@@ -50,7 +62,7 @@ const App: React.FC = () => {
       localStorage.setItem('ritual_admin_mode', nextAdmin.toString());
       setAdminClicks(0);
       if (nextAdmin) setIsLimitReached(false);
-      alert(nextAdmin ? "관리자 모드 활성화: 무제한 사용 가능 ✨" : "관리자 모드 해제");
+      alert(nextAdmin ? translations[lang].admin_mode_on : translations[lang].admin_mode_off);
     } else {
       setAdminClicks(nextClicks);
     }
@@ -125,17 +137,33 @@ const App: React.FC = () => {
         </div>
 
         <h1 className="text-5xl md:text-6xl font-serif font-semibold leading-[1.1] mb-6 tracking-tight text-slate-800">
-          오늘을 닻 내리는<br />
-          <span className="gradient-text">나만의 비밀식</span>
+          {translations[lang].title_line1}<br />
+          <span className="gradient-text">{translations[lang].title_line2}</span>
         </h1>
 
         <div className="flex flex-col items-center justify-center gap-4">
+          {/* Language Switcher */}
+          <div className="flex items-center gap-2 mb-2">
+            {(['KR', 'EN', 'JA'] as Language[]).map((l) => (
+              <button
+                key={l}
+                onClick={() => changeLang(l)}
+                className={`text-[10px] font-bold px-3 py-1 rounded-full transition-all ${lang === l
+                  ? 'bg-slate-900 text-white shadow-lg'
+                  : 'bg-white/50 text-slate-400 hover:bg-white'
+                  }`}
+              >
+                {l === 'KR' ? '한국어' : l === 'EN' ? 'ENGLISH' : '日本語'}
+              </button>
+            ))}
+          </div>
+
           <div className="flex items-center gap-3 opacity-40">
             <div className="h-px w-8 bg-slate-300"></div>
-            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">Tea • Act • Scent • Bloom</p>
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">{translations[lang].subtitle}</p>
             <div className="h-px w-8 bg-slate-300"></div>
           </div>
-          <p className="text-[10px] font-black text-pink-300 tracking-[0.1em]">Remaining Energy: {Math.max(0, USAGE_LIMIT - usageCount)} / {USAGE_LIMIT}</p>
+          <p className="text-[10px] font-black text-pink-300 tracking-[0.1em]">{translations[lang].energy}: {Math.max(0, USAGE_LIMIT - usageCount)} / {USAGE_LIMIT}</p>
         </div>
       </header>
 
@@ -148,19 +176,25 @@ const App: React.FC = () => {
               <div className="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg>
               </div>
-              <h4 className="text-xl font-serif font-bold text-slate-800 mb-2">오늘의 에너지를 다 썼어요</h4>
+              <h4 className="text-xl font-serif font-bold text-slate-800 mb-2">
+                {lang === 'KR' ? '오늘의 에너지를 다 썼어요' : lang === 'EN' ? 'Out of Energy' : '本日のエネルギーを使い果たしました'}
+              </h4>
               <p className="text-sm text-slate-500 break-keep leading-relaxed">
-                충전이 필요해요. 내일 새로운 인연으로<br />다시 만나요!
+                {lang === 'KR'
+                  ? '충전이 필요해요. 내일 새로운 인연으로 다시 만나요!'
+                  : lang === 'EN'
+                    ? 'Recharge needed. Let\'s meet again tomorrow with some new ritual!'
+                    : '充電が必要です。明日、また新しい縁でお会いしましょう！'}
               </p>
             </div>
           )}
 
           <div className="grid grid-cols-4 gap-3 mb-12">
             {[
-              { label: 'TEA', list: TEAS, idx: 0, delay: 0 },
-              { label: 'ACT', list: ACTIVITIES, idx: 1, delay: 200 },
-              { label: 'PERF', list: PERFUMES, idx: 2, delay: 400 },
-              { label: 'FLOW', list: FLOWERS, idx: 3, delay: 600 }
+              { label: translations[lang].category_tea, list: TEAS, idx: 0, delay: 0 },
+              { label: translations[lang].category_act, list: ACTIVITIES, idx: 1, delay: 200 },
+              { label: translations[lang].category_scent, list: PERFUMES, idx: 2, delay: 400 },
+              { label: translations[lang].category_bloom, list: FLOWERS, idx: 3, delay: 600 }
             ].map((reel) => (
               <div key={reel.label} className="space-y-3">
                 <p className="text-[10px] font-bold text-slate-400 text-center uppercase tracking-widest">{reel.label}</p>
@@ -179,16 +213,16 @@ const App: React.FC = () => {
             {slotState === SlotState.SPINNING ? (
               <span className="flex items-center justify-center gap-2">
                 <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                인연을 맺는 중...
+                {lang === 'KR' ? '인연을 맺는 중...' : lang === 'EN' ? 'Connecting...' : '縁を結んでいます...'}
               </span>
-            ) : isLimitReached ? '에너지 충전 중...' : '리추얼 조각 맞추기 ✨'}
+            ) : isLimitReached ? (lang === 'KR' ? '에너지 충전 중...' : 'Recharging...') : translations[lang].spin_btn}
           </button>
         </section>
 
         {slotState === SlotState.FINISHED && result && (
           <div className="space-y-16 animate-toss">
             <div className="text-center relative">
-              <span className="text-[12px] font-bold text-pink-300 uppercase tracking-[0.3em] block mb-3 font-serif">Ritual Harmony</span>
+              <span className="text-[12px] font-bold text-pink-300 uppercase tracking-[0.3em] block mb-3 font-serif">{translations[lang].result_harmony}</span>
               <h2 className="text-8xl font-serif font-semibold gradient-text tracking-tighter italic">{result.score}%</h2>
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-pink-100"></div>
             </div>
@@ -226,7 +260,7 @@ const App: React.FC = () => {
               </div>
               <h3 className="text-xl font-serif font-semibold mb-6 flex items-center gap-4 text-slate-800">
                 <span className="w-10 h-px bg-pink-200" />
-                AI Ritual Commentary
+                {translations[lang].commentary_title}
               </h3>
               <p className="text-slate-600 leading-relaxed text-[17px] font-medium break-keep italic font-serif">
                 "{result.aiCommentary}"
@@ -238,8 +272,8 @@ const App: React.FC = () => {
               <div className="p-10">
                 <div className="flex justify-between items-start mb-8">
                   <div>
-                    <h3 className="text-2xl font-serif font-bold mb-2 text-slate-800 tracking-tight">행운의 오브제</h3>
-                    <p className="text-[10px] font-bold text-pink-400 uppercase tracking-[0.2em]">The Curator's Selection</p>
+                    <h3 className="text-2xl font-serif font-bold mb-2 text-slate-800 tracking-tight">{translations[lang].lucky_item}</h3>
+                    <p className="text-[10px] font-bold text-pink-400 uppercase tracking-[0.2em]">{translations[lang].curator_selection}</p>
                   </div>
                   <div className="flex items-center gap-1.5 px-3 py-1 bg-pink-50 rounded-full">
                     <span className="w-1.5 h-1.5 bg-pink-500 rounded-full animate-pulse"></span>
@@ -250,7 +284,7 @@ const App: React.FC = () => {
                 {isLoadingItem ? (
                   <div className="py-24 flex flex-col items-center gap-6">
                     <div className="w-16 h-16 border-2 border-pink-50 border-t-pink-400 rounded-full animate-spin" />
-                    <p className="text-[11px] font-bold text-slate-400 tracking-widest uppercase animate-pulse">Designing your luck...</p>
+                    <p className="text-[11px] font-bold text-slate-400 tracking-widest uppercase animate-pulse">{translations[lang].loading_ai}</p>
                   </div>
                 ) : shoppingItem ? (
                   <div className="space-y-8 animate-toss">
@@ -277,10 +311,12 @@ const App: React.FC = () => {
                           rel="noopener noreferrer"
                           className="flex items-center justify-center w-full py-6 bg-slate-900 text-white text-[16px] font-bold rounded-[30px] shadow-2xl active:scale-[0.98] transition-all hover:bg-slate-800"
                         >
-                          쿠팡에서 바로 구매하기 ➔
+                          {lang === 'KR' ? '쿠팡에서 바로 구매하기 ➔' : lang === 'EN' ? 'Check on Shop ➔' : 'ショップで確認する ➔'}
                         </a>
                         <p className="text-[9px] text-slate-400 text-center px-4 leading-normal">
-                          이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+                          {lang === 'KR'
+                            ? '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.'
+                            : 'This contains affiliate links. We may receive a commission for purchases made through these links.'}
                         </p>
                       </div>
                     </div>
