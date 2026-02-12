@@ -6,6 +6,107 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Mood Blossom v3 - Secret Ritual</title>
+    <!-- BYPASS: Restore original CDN and internal styles for immediate stability -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF7EAD;
+            --primary-soft: #FFB1CC;
+            --bg: #FDFCFB;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Pretendard', sans-serif;
+            background-color: #f8f8f8;
+            /* Contrast for the card area */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* 
+           RESTORE ORIGINAL SCALE: 
+           Limit the root container size to prevent the 'too big' issue on desktop.
+        */
+        #root {
+            max-width: 768px;
+            /* Standard Tablet/Mobile max width */
+            margin: 0 auto;
+            background-color: var(--bg);
+            min-height: 100vh;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .soft-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+            box-shadow: 0 10px 40px rgba(255, 126, 173, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .magic-button {
+            background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%);
+            color: white;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FF7EAD 0%, #FFB1CC 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(4deg);
+            }
+        }
+
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-toss {
+            animation: slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
