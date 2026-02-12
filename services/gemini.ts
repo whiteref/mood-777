@@ -63,27 +63,27 @@ export const getRealtimeShoppingItems = async (
   if (!apiKey) {
     const fallbacks = {
       KR: {
-        itemName: "Crystal Quartz Meditation Stone",
-        itemPrice: "₩24,500",
-        itemReason: "현재 인연의 에너지가 너무 강해 AI가 잠시 휴식 중입니다. 대신 당신의 평온을 지켜줄 크리스탈 원석을 준비했습니다.",
-        searchKeyword: "meditation crystal quartz"
+        itemName: "Pink Glow Ritual Skincare Set",
+        itemPrice: "₩48,000",
+        itemReason: "현재 인연의 에너지가 너무 강해 AI가 잠시 휴식 중입니다. 대신 당신의 피부와 마음에 생기를 더해줄 핑크빛 리추얼 세트를 준비했습니다.",
+        searchKeyword: "pink glow skincare ritual set"
       },
       EN: {
-        itemName: "Crystal Quartz Meditation Stone",
-        itemPrice: "$18.00",
-        itemReason: "The energy of our connection is so strong right now that the AI is taking a short rest. Instead, we've prepared a crystal quartz to protect your peace.",
-        searchKeyword: "meditation crystal quartz"
+        itemName: "Pink Glow Ritual Skincare Set",
+        itemPrice: "$35.00",
+        itemReason: "The energy of our connection is so strong right now that the AI is taking a short rest. Instead, we've prepared a pink ritual set to revitalize your skin and soul.",
+        searchKeyword: "pink glow skincare ritual set"
       },
       JA: {
-        itemName: "クリスタルクォーツ 瞑想ストーン",
-        itemPrice: "¥2,800",
-        itemReason: "現在、縁のエネルギーが非常に強いため、AIが一時的に休息しています。代わりに、あなたの平穏を守るクリスタル原石を用意しました。",
-        searchKeyword: "meditation crystal quartz"
+        itemName: "ピンクグロウ リ추얼 スキンケアセット",
+        itemPrice: "¥5,200",
+        itemReason: "現在、縁のエネルギーが非常に強いため、AIが一時的に休息しています。代わりに、あなたの肌と心に活力を与えるピンク色のリチュアルセットを用意しました。",
+        searchKeyword: "pink glow skincare ritual set"
       }
     };
     return {
       ...fallbacks[lang],
-      itemImageUrl: "https://loremflickr.com/800/800/crystal,stone,aesthetic/all"
+      itemImageUrl: "https://loremflickr.com/800/800/skincare,cosmetic,pink,aesthetic/all"
     };
   }
 
@@ -136,27 +136,27 @@ export const getRealtimeShoppingItems = async (
     console.error("AI Shopping Recommendation Failed:", e);
     const errorFallbacks = {
       KR: {
-        itemName: "Silk Eye Mask & Ritual Mist",
-        itemPrice: "₩32,000",
-        itemReason: "오늘의 인연은 매우 고요하고 아늑합니다. 깊은 휴식을 도와줄 실크 마스크와 미스트 세트를 추천해 드려요.",
-        searchKeyword: "silk eye mask aromatherapy mist"
+        itemName: "Rose Quartz Face Roller",
+        itemPrice: "₩22,000",
+        itemReason: "오늘의 인연은 매우 부드럽고 따뜻합니다. 당신의 아름다움을 깨워줄 핑크 쿼츠 페이스 롤러를 추천해 드려요.",
+        searchKeyword: "rose quartz face roller pink"
       },
       EN: {
-        itemName: "Silk Eye Mask & Ritual Mist",
-        itemPrice: "$25.00",
-        itemReason: "Today's ritual is very quiet and cozy. We recommend a silk mask and mist set to help you rest deeply.",
-        searchKeyword: "silk eye mask aromatherapy mist"
+        itemName: "Rose Quartz Face Roller",
+        itemPrice: "$16.00",
+        itemReason: "Today's connection is very soft and warm. We recommend a rose quartz face roller to awaken your beauty.",
+        searchKeyword: "rose quartz face roller pink"
       },
       JA: {
-        itemName: "シルクアイマスク＆リチュアルミスト",
-        itemPrice: "¥3,500",
-        itemReason: "今日のご縁はとても静かで心地よいものです。深い休息を助けるシルクマスクとミストのセットをお勧めします。",
-        searchKeyword: "silk eye mask aromatherapy mist"
+        itemName: "ローズクォーツ フェイスローラー",
+        itemPrice: "¥2,500",
+        itemReason: "今日のご縁はとても柔らかく温かいものです。あなたの美しさを呼び覚ますローズクォーツフェイスローラーをお勧めします。",
+        searchKeyword: "rose quartz face roller pink"
       }
     };
     return {
       ...errorFallbacks[lang],
-      itemImageUrl: `https://loremflickr.com/800/800/sleep,luxury,aesthetic/all`
+      itemImageUrl: `https://loremflickr.com/800/800/skincare,pink,aesthetic/all`
     };
   }
 };
