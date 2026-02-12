@@ -1,110 +1,810 @@
 {
   "Tea": [
-    {"id": "tea_1", "name": "Camomile Dream", "category": "tea", "description": "부드러운 사과 향이 지친 마음을 어루만져 줍니다."},
-    {"id": "tea_2", "name": "Rose Hip Sunset", "category": "tea", "description": "비타민 가득한 붉은 햇살 한 모금을 마십니다."},
-    {"id": "tea_3", "name": "Secret Earl Grey", "category": "tea", "description": "베르가모트의 시트러스 향이 정신을 맑게 깨웁니다."},
-    {"id": "tea_4", "name": "Lavender Mist", "category": "tea", "description": "보랏빛 안개 속에 잠기어 깊은 휴식을 취합니다."},
-    {"id": "tea_5", "name": "Golden Oolong", "category": "tea", "description": "깊고 구수한 황금빛 풍미로 내면을 채웁니다."},
-    {"id": "tea_6", "name": "Peppermint Breeze", "category": "tea", "description": "입안 가득 퍼지는 상쾌함이 머릿속을 환기합니다."},
-    {"id": "tea_7", "name": "Jasmine Moonlight", "category": "tea", "description": "달빛 아래 핀 자스민 꽃향기가 우아한 시간을 만듭니다."},
-    {"id": "tea_8", "name": "Lemon Ginger Fire", "category": "tea", "description": "따뜻한 생강과 레몬의 활력이 몸을 따뜻하게 데웁니다."},
-    {"id": "tea_9", "name": "Hibiscus Bloom", "category": "tea", "description": "새콤달콤한 붉은 꽃잎의 에너지가 생기를 불어넣습니다."},
-    {"id": "tea_10", "name": "Green Tea Ritual", "category": "tea", "description": "정갈한 녹차 한 잔으로 마음의 중심을 잡습니다."},
-    {"id": "tea_11", "name": "Vanilla Rooibos", "category": "tea", "description": "달콤한 바닐라 향이 감싸주는 루이보스의 부드러움."},
-    {"id": "tea_12", "name": "Matcha Serenity", "category": "tea", "description": "진한 말차의 녹색 에너지가 명상의 정점을 찍습니다."},
-    {"id": "tea_13", "name": "Midnight Darjeeling", "category": "tea", "description": "깊고 진한 머스캣 향이 밤의 고요를 채웁니다."},
-    {"id": "tea_14", "name": "Chrysanthemum Peace", "category": "tea", "description": "국화꽃잎이 춤추는 찻잔 속에서 평온을 찾습니다."},
-    {"id": "tea_15", "name": "Honey Citron Glow", "category": "tea", "description": "달콤한 유자의 향기가 피부와 기분을 밝게 합니다."},
-    {"id": "tea_16", "name": "Cinnamon Spice Cloud", "category": "tea", "description": "스파이시한 시나몬 향이 포근한 구름처럼 감쌉니다."},
-    {"id": "tea_17", "name": "White Peach Blossom", "category": "tea", "description": "달콤한 복숭아 향이 입안에서 꽃을 피웁니다."},
-    {"id": "tea_18", "name": "Masala Chai Energy", "category": "tea", "description": "이국적인 향신료의 조화가 활기찬 아침을 선사합니다."},
-    {"id": "tea_19", "name": "Elderberry Shield", "category": "tea", "description": "엘더베리의 깊은 맛이 내 몸의 방어막이 되어줍니다."},
-    {"id": "tea_20", "name": "Dandelion Detox", "category": "tea", "description": "민들레 뿌리의 씁쓸함이 몸 안을 정화합니다."},
-    {"id": "tea_21", "name": "Sweet Fennel Comfort", "category": "tea", "description": "부드러운 펜넬 향이 속을 편안하게 가라앉힙니다."},
-    {"id": "tea_22", "name": "Lotus Root Grace", "category": "tea", "description": "진흙 속에서 피어난 연근의 맑은 기운을 마십니다."},
-    {"id": "tea_23", "name": "Cranberry Zing", "category": "tea", "description": "상큼한 크랜베리가 기분에 화려한 색을 입힙니다."},
-    {"id": "tea_24", "name": "Mulberry Leaf Silk", "category": "tea", "description": "실크처럼 부드러운 뽕잎차가 몸의 균형을 맞춥니다."},
-    {"id": "tea_25", "name": "Osmanthus Amber", "category": "tea", "description": "금목서 꽃향기가 호박빛 맑은 물에 스며듭니다."}
+    {
+      "id": "tea_1",
+      "name": "Camomile Dream",
+      "name_kr": "카모마일 드림",
+      "name_en": "Camomile Dream",
+      "name_ja": "カモミールドリーム",
+      "category": "tea"
+    },
+    {
+      "id": "tea_2",
+      "name": "Rose Hip Sunset",
+      "name_kr": "로즈힙 선셋",
+      "name_en": "Rose Hip Sunset",
+      "name_ja": "ローズヒップサンセット",
+      "category": "tea"
+    },
+    {
+      "id": "tea_3",
+      "name": "Secret Earl Grey",
+      "name_kr": "시크릿 얼그레이",
+      "name_en": "Secret Earl Grey",
+      "name_ja": "シークレットアールグレイ",
+      "category": "tea"
+    },
+    {
+      "id": "tea_4",
+      "name": "Lavender Mist",
+      "name_kr": "라벤더 미스트",
+      "name_en": "Lavender Mist",
+      "name_ja": "ラベンダーミスト",
+      "category": "tea"
+    },
+    {
+      "id": "tea_5",
+      "name": "Golden Oolong",
+      "name_kr": "골든 우롱",
+      "name_en": "Golden Oolong",
+      "name_ja": "ゴールデンウーロン",
+      "category": "tea"
+    },
+    {
+      "id": "tea_6",
+      "name": "Peppermint Breeze",
+      "name_kr": "페퍼민트 브리즈",
+      "name_en": "Peppermint Breeze",
+      "name_ja": "ペパーミントブリーズ",
+      "category": "tea"
+    },
+    {
+      "id": "tea_7",
+      "name": "Jasmine Moonlight",
+      "name_kr": "자스민 문라이트",
+      "name_en": "Jasmine Moonlight",
+      "name_ja": "ジャスミンムーンライト",
+      "category": "tea"
+    },
+    {
+      "id": "tea_8",
+      "name": "Lemon Ginger Fire",
+      "name_kr": "레몬 진저 파이어",
+      "name_en": "Lemon Ginger Fire",
+      "name_ja": "レモンジンジャーファ이어",
+      "category": "tea"
+    },
+    {
+      "id": "tea_9",
+      "name": "Hibiscus Bloom",
+      "name_kr": "히비스커스 블룸",
+      "name_en": "Hibiscus Bloom",
+      "name_ja": "ハイビスカスブルーム",
+      "category": "tea"
+    },
+    {
+      "id": "tea_10",
+      "name": "Green Tea Ritual",
+      "name_kr": "그린티 리추얼",
+      "name_en": "Green Tea Ritual",
+      "name_ja": "グリーンティーリチュアル",
+      "category": "tea"
+    },
+    {
+      "id": "tea_11",
+      "name": "Vanilla Rooibos",
+      "name_kr": "바닐라 루이보스",
+      "name_en": "Vanilla Rooibos",
+      "name_ja": "バ닐ラルイボス",
+      "category": "tea"
+    },
+    {
+      "id": "tea_12",
+      "name": "Matcha Serenity",
+      "name_kr": "말차 세레니티",
+      "name_en": "Matcha Serenity",
+      "name_ja": "抹茶セレ니ティ",
+      "category": "tea"
+    },
+    {
+      "id": "tea_13",
+      "name": "Midnight Darjeeling",
+      "name_kr": "미드나잇 다즐링",
+      "name_en": "Midnight Darjeeling",
+      "name_ja": "ミッドナイトダージリン",
+      "category": "tea"
+    },
+    {
+      "id": "tea_14",
+      "name": "Chrysanthemum Peace",
+      "name_kr": "크리산세멈 피스",
+      "name_en": "Chrysanthemum Peace",
+      "name_ja": "クリサンセマムピース",
+      "category": "tea"
+    },
+    {
+      "id": "tea_15",
+      "name": "Honey Citron Glow",
+      "name_kr": "허니 시트론 글로우",
+      "name_en": "Honey Citron Glow",
+      "name_ja": "ハニーシトロングロウ",
+      "category": "tea"
+    },
+    {
+      "id": "tea_16",
+      "name": "Cinnamon Spice Cloud",
+      "name_kr": "시나몬 스파이스 클라우드",
+      "name_en": "Cinnamon Spice Cloud",
+      "name_ja": "シナ몬スパイスクラウド",
+      "category": "tea"
+    },
+    {
+      "id": "tea_17",
+      "name": "White Peach Blossom",
+      "name_kr": "화이트 피치 블로섬",
+      "name_en": "White Peach Blossom",
+      "name_ja": "ホワイトピーチブロッサム",
+      "category": "tea"
+    },
+    {
+      "id": "tea_18",
+      "name": "Masala Chai Energy",
+      "name_kr": "마살라 차이 에너지",
+      "name_en": "Masala Chai Energy",
+      "name_ja": "マサラチャイエネルギー",
+      "category": "tea"
+    },
+    {
+      "id": "tea_19",
+      "name": "Elderberry Shield",
+      "name_kr": "엘더베리 쉴드",
+      "name_en": "Elderberry Shield",
+      "name_ja": "エルダーベリーシールド",
+      "category": "tea"
+    },
+    {
+      "id": "tea_20",
+      "name": "Dandelion Detox",
+      "name_kr": "단델리온 디톡스",
+      "name_en": "Dandelion Detox",
+      "name_ja": "ダンデライオンデトックス",
+      "category": "tea"
+    },
+    {
+      "id": "tea_21",
+      "name": "Sweet Fennel Comfort",
+      "name_kr": "스위트 펜넬 컴포트",
+      "name_en": "Sweet Fennel Comfort",
+      "name_ja": "スイートフェンネルコンフォート",
+      "category": "tea"
+    },
+    {
+      "id": "tea_22",
+      "name": "Lotus Root Grace",
+      "name_kr": "로터스 루트 그레이스",
+      "name_en": "Lotus Root Grace",
+      "name_ja": "ロータスルートグレイス",
+      "category": "tea"
+    },
+    {
+      "id": "tea_23",
+      "name": "Cranberry Zing",
+      "name_kr": "크랜베리 징",
+      "name_en": "Cranberry Zing",
+      "name_ja": "クランベリージング",
+      "category": "tea"
+    },
+    {
+      "id": "tea_24",
+      "name": "Mulberry Leaf Silk",
+      "name_kr": "멀버리 리프 실크",
+      "name_en": "Mulberry Leaf Silk",
+      "name_ja": "マルベリーリーフシルク",
+      "category": "tea"
+    },
+    {
+      "id": "tea_25",
+      "name": "Osmanthus Amber",
+      "name_kr": "오스만투스 앰버",
+      "name_en": "Osmanthus Amber",
+      "name_ja": "オスマンサスアンバー",
+      "category": "tea"
+    }
   ],
   "Activity": [
-    {"id": "activity_1", "name": "Sunrise Yoga", "category": "activity", "description": "떠오르는 태양을 향해 몸을 뻗으며 하루를 시작합니다."},
-    {"id": "activity_2", "name": "Deep Journaling", "category": "activity", "description": "내면의 목소리를 종이 위에 묵묵히 기록합니다."},
-    {"id": "activity_3", "name": "Twilight Walk", "category": "activity", "description": "지는 노을을 보며 하루의 근심을 길 위에 내려놓습니다."},
-    {"id": "activity_4", "name": "Warm Bath Ritual", "category": "activity", "description": "따뜻한 물 속에서 온몸의 긴장을 녹여냅니다."},
-    {"id": "activity_5", "name": "Silence Meditation", "category": "activity", "description": "오직 숨소리에만 집중하며 침묵의 평화를 누립니다."},
-    {"id": "activity_6", "name": "Incense Reading", "category": "activity", "description": "피어오르는 향기 속에서 책의 지혜를 흡수합니다."},
-    {"id": "activity_7", "name": "Hand-drip Coffee", "category": "activity", "description": "천천히 물을 내리며 기다림의 미학을 배웁니다."},
-    {"id": "activity_8", "name": "Flower Arrangement", "category": "activity", "description": "꽃의 생명을 매만지며 일상에 예술을 더합니다."},
-    {"id": "activity_9", "name": "Sketching the Moment", "category": "activity", "description": "눈앞의 풍경을 연필 끝으로 붙잡아 둡니다."},
-    {"id": "activity_10", "name": "Tea Ceremony", "category": "activity", "description": "차를 내리는 정직한 동작으로 마음을 정돈합니다."},
-    {"id": "activity_11", "name": "Stargazing", "category": "activity", "description": "깊은 밤하늘의 별을 보며 우주의 광활함을 느껴봅니다."},
-    {"id": "activity_12", "name": "Gentle Music Therapy", "category": "activity", "description": "선율에 몸을 맡기고 감정의 응어리를 풀어줍니다."},
-    {"id": "activity_13", "name": "Kindness Letter", "category": "activity", "description": "고마운 사람에게 진심을 담은 손편지를 씁니다."},
-    {"id": "activity_14", "name": "Mindful Cooking", "category": "activity", "description": "재료의 질감을 느끼며 나를 위한 정성 담긴 식사를 만듭니다."},
-    {"id": "activity_15", "name": "Breathing Exercise", "category": "activity", "description": "깊은 호흡으로 세포 하나하나에 산소를 전달합니다."},
-    {"id": "activity_16", "name": "Nature Sound Listening", "category": "activity", "description": "새소리와 바람소리로 도시의 소음을 씻어냅니다."},
-    {"id": "activity_17", "name": "Solo Dance Step", "category": "activity", "description": "자유롭게 몸을 흔들며 내 안의 생명력을 일깨웁니다."},
-    {"id": "activity_18", "name": "Positive Affirmation", "category": "activity", "description": "나를 향한 따뜻한 말 한마디로 자존감을 채웁니다."},
-    {"id": "activity_19", "name": "Plant Watering", "category": "activity", "description": "초록 식물에게 물을 주며 돌봄의 기쁨을 나눕니다."},
-    {"id": "activity_20", "name": "Digital Detox", "category": "activity", "description": "화면을 끄고 현실의 감각에 완전히 머무릅니다."},
-    {"id": "activity_21", "name": "Memory Photo Album", "category": "activity", "description": "오래된 사진첩을 넘기며 소중한 순간들을 되새깁니다."},
-    {"id": "activity_22", "name": "Dream Vision Board", "category": "activity", "description": "내가 바라는 미래를 시각화하며 에너지를 모읍니다."},
-    {"id": "activity_23", "name": "Foot Massage Time", "category": "activity", "description": "하루 종일 고생한 발을 어루만지며 감사를 전합니다."},
-    {"id": "activity_24", "name": "Binaural Beats", "category": "activity", "description": "뇌파를 안정시키는 소리로 깊은 집중 상태로 들어갑니다."},
-    {"id": "activity_25", "name": "Gratitude Journal", "category": "activity", "description": "오늘 일어난 다섯 가지 감사한 일을 적어봅니다."}
+    {
+      "id": "activity_1",
+      "name": "Sunrise Yoga",
+      "name_kr": "일출 요가",
+      "name_en": "Sunrise Yoga",
+      "name_ja": "サンライズヨガ",
+      "category": "activity"
+    },
+    {
+      "id": "activity_2",
+      "name": "Deep Journaling",
+      "name_kr": "딥 저널링",
+      "name_en": "Deep Journaling",
+      "name_ja": "ディープジャーナリング",
+      "category": "activity"
+    },
+    {
+      "id": "activity_3",
+      "name": "Twilight Walk",
+      "name_kr": "황혼 산책",
+      "name_en": "Twilight Walk",
+      "name_ja": "トワイライトウォーク",
+      "category": "activity"
+    },
+    {
+      "id": "activity_4",
+      "name": "Warm Bath Ritual",
+      "name_kr": "따뜻한 목욕 리추얼",
+      "name_en": "Warm Bath Ritual",
+      "name_ja": "ウォームバスリチュアル",
+      "category": "activity"
+    },
+    {
+      "id": "activity_5",
+      "name": "Silence Meditation",
+      "name_kr": "침묵 명상",
+      "name_en": "Silence Meditation",
+      "name_ja": "サイレンスメディテーション",
+      "category": "activity"
+    },
+    {
+      "id": "activity_6",
+      "name": "Incense Reading",
+      "name_kr": "인센스 독서",
+      "name_en": "Incense Reading",
+      "name_ja": "インセンス読書",
+      "category": "activity"
+    },
+    {
+      "id": "activity_7",
+      "name": "Hand-drip Coffee",
+      "name_kr": "핸드드립 커피",
+      "name_en": "Hand-drip Coffee",
+      "name_ja": "ハンドドリップコーヒー",
+      "category": "activity"
+    },
+    {
+      "id": "activity_8",
+      "name": "Flower Arrangement",
+      "name_kr": "꽃꽂이",
+      "name_en": "Flower Arrangement",
+      "name_ja": "フラワーアレンジメント",
+      "category": "activity"
+    },
+    {
+      "id": "activity_9",
+      "name": "Sketching the Moment",
+      "name_kr": "순간 스케치",
+      "name_en": "Sketching the Moment",
+      "name_ja": "瞬間スケッチ",
+      "category": "activity"
+    },
+    {
+      "id": "activity_10",
+      "name": "Tea Ceremony",
+      "name_kr": "다도",
+      "name_en": "Tea Ceremony",
+      "name_ja": "茶道",
+      "category": "activity"
+    },
+    {
+      "id": "activity_11",
+      "name": "Stargazing",
+      "name_kr": "별 보기",
+      "name_en": "Stargazing",
+      "name_ja": "星空観察",
+      "category": "activity"
+    },
+    {
+      "id": "activity_12",
+      "name": "Gentle Music Therapy",
+      "name_kr": "부드러운 음악 요법",
+      "name_en": "Gentle Music Therapy",
+      "name_ja": "優しい音楽療法",
+      "category": "activity"
+    },
+    {
+      "id": "activity_13",
+      "name": "Kindness Letter",
+      "name_kr": "다정한 편지 쓰기",
+      "name_en": "Kindness Letter",
+      "name_ja": "親切な手紙",
+      "category": "activity"
+    },
+    {
+      "id": "activity_14",
+      "name": "Mindful Cooking",
+      "name_kr": "마인드풀 쿠킹",
+      "name_en": "Mindful Cooking",
+      "name_ja": "マインドフルクッキング",
+      "category": "activity"
+    },
+    {
+      "id": "activity_15",
+      "name": "Breathing Exercise",
+      "name_kr": "호흡 운동",
+      "name_en": "Breathing Exercise",
+      "name_ja": "呼吸エクササイズ",
+      "category": "activity"
+    },
+    {
+      "id": "activity_16",
+      "name": "Nature Sound Listening",
+      "name_kr": "자연의 소리 듣기",
+      "name_en": "Nature Sound Listening",
+      "name_ja": "自然の音を聴く",
+      "category": "activity"
+    },
+    {
+      "id": "activity_17",
+      "name": "Solo Dance Step",
+      "name_kr": "솔로 댄스 스텝",
+      "name_en": "Solo Dance Step",
+      "name_ja": "ソロダンスステップ",
+      "category": "activity"
+    },
+    {
+      "id": "activity_18",
+      "name": "Positive Affirmation",
+      "name_kr": "긍정 확언",
+      "name_en": "Positive Affirmation",
+      "name_ja": "肯定的なアファメーション",
+      "category": "activity"
+    },
+    {
+      "id": "activity_19",
+      "name": "Plant Watering",
+      "name_kr": "식물 물 주기",
+      "name_en": "Plant Watering",
+      "name_ja": "植物の水やり",
+      "category": "activity"
+    },
+    {
+      "id": "activity_20",
+      "name": "Digital Detox",
+      "name_kr": "디지털 디톡스",
+      "name_en": "Digital Detox",
+      "name_ja": "デジタルデトックス",
+      "category": "activity"
+    },
+    {
+      "id": "activity_21",
+      "name": "Memory Photo Album",
+      "name_kr": "추억의 사진첩",
+      "name_en": "Memory Photo Album",
+      "name_ja": "思い出のフォトアルバム",
+      "category": "activity"
+    },
+    {
+      "id": "activity_22",
+      "name": "Dream Vision Board",
+      "name_kr": "드림 비전 보드",
+      "name_en": "Dream Vision Board",
+      "name_ja": "ドリームビ전ボード",
+      "category": "activity"
+    },
+    {
+      "id": "activity_23",
+      "name": "Foot Massage Time",
+      "name_kr": "발 마사지 시간",
+      "name_en": "Foot Massage Time",
+      "name_ja": "フットマッサージタイム",
+      "category": "activity"
+    },
+    {
+      "id": "activity_24",
+      "name": "Binaural Beats",
+      "name_kr": "바이노럴 비트",
+      "name_en": "Binaural Beats",
+      "name_ja": "バイノーラルビーツ",
+      "category": "activity"
+    },
+    {
+      "id": "activity_25",
+      "name": "Gratitude Journal",
+      "name_kr": "감사 일기",
+      "name_en": "Gratitude Journal",
+      "name_ja": "感謝日記",
+      "category": "activity"
+    }
   ],
   "Perfume": [
-    {"id": "perfume_1", "name": "Morning Moss", "category": "perfume", "description": "이른 아침 숲속의 젖은 흙과 이끼의 생명력."},
-    {"id": "perfume_2", "name": "Citrus Bloom", "category": "perfume", "description": "갓 짜낸 오렌지의 과즙과 하얀 꽃잎의 찬란함."},
-    {"id": "perfume_3", "name": "Sandalwood Silk", "category": "perfume", "description": "은은하고 묵직한 나무 향이 실크처럼 피부를 감쌉니다."},
-    {"id": "perfume_4", "name": "Linen Breeze", "category": "perfume", "description": "햇살에 잘 마른 리넨 셔츠에서 나는 깨끗한 살결 향."},
-    {"id": "perfume_5", "name": "Midnight Musk", "category": "perfume", "description": "깊은 밤의 차가운 공기와 부드러운 머스크의 신비로움."},
-    {"id": "perfume_6", "name": "Amber Sunset", "category": "perfume", "description": "노을처럼 따뜻하고 달콤한 앰버의 잔향이 남습니다."},
-    {"id": "perfume_7", "name": "Fig Rain", "category": "perfume", "description": "비 내리는 무화과 정원의 씁쓸하고도 달콤한 잎사귀 향."},
-    {"id": "perfume_8", "name": "Patchouli Night", "category": "perfume", "description": "대지의 깊은 기운을 담은 파출리의 이국적인 매력."},
-    {"id": "perfume_9", "name": "Iris Veil", "category": "perfume", "description": "우아한 보랏빛 아이리스의 파우더리한 베일."},
-    {"id": "perfume_10", "name": "Bergamot Sky", "category": "perfume", "description": "구름 한 점 없는 파란 하늘을 닮은 투명한 시트러스."},
-    {"id": "perfume_11", "name": "Leather Library", "category": "perfume", "description": "오래된 마룬 가죽 책장과 종이 냄새의 지적인 조화."},
-    {"id": "perfume_12", "name": "Sea Salt Spray", "category": "perfume", "description": "파도가 부서지는 바닷가의 짭조름한 소금기와 청량함."},
-    {"id": "perfume_13", "name": "Rose Water", "category": "perfume", "description": "이슬 맺힌 새벽 장미의 신선한 생화 그대로의 향."},
-    {"id": "perfume_14", "name": "Oudh Mystique", "category": "perfume", "description": "천 년의 세월을 간직한 침향의 깊고 심오한 존재감."},
-    {"id": "perfume_15", "name": "Vanilla Cloud", "category": "perfume", "description": "포근한 구름 속에 있는 듯한 달콤하고 부드러운 우유 향."},
-    {"id": "perfume_16", "name": "Vetiver Roots", "category": "perfume", "description": "땅속 깊이 뻗은 베티버 뿌리의 연기처럼 씁쓸한 우디 향."},
-    {"id": "perfume_17", "name": "Jasmine Secret", "category": "perfume", "description": "여왕의 꽃 자스민이 뿜어내는 농밀하고 화려한 향취."},
-    {"id": "perfume_18", "name": "Eucalyptus Mist", "category": "perfume", "description": "비염을 가라앉히듯 코끝을 뚫어주는 차가운 유칼립투스."},
-    {"id": "perfume_19", "name": "Tobacco Vanilla", "category": "perfume", "description": "고풍스러운 잎담배 향과 달콤한 바닐라의 아이러니한 만남."},
-    {"id": "perfume_20", "name": "Lilac Garden", "category": "perfume", "description": "봄바람에 실려 오는 연보랏빛 라일락의 향기로운 유혹."},
-    {"id": "perfume_21", "name": "Cedarwood Cabin", "category": "perfume", "description": "숲속 통나무집에서 느껴지는 삼나무의 건조하고 깨끗한 향."},
-    {"id": "perfume_22", "name": "Nerolay Glow", "category": "perfume", "description": "오렌지 꽃 오일인 네롤리의 맑고 순수한 생기."},
-    {"id": "perfume_23", "name": "White Tea Zen", "category": "perfume", "description": "마음을 평온하게 가라앉히는 백차의 절제된 미학."},
-    {"id": "perfume_24", "name": "Pink Pepper Fire", "category": "perfume", "description": "톡 쏘는 핑크 페퍼의 발랄한 시작과 따뜻한 반전."},
-    {"id": "perfume_25", "name": "Gardenia Petal", "category": "perfume", "description": "순백의 가르데니아 꽃잎이 주는 풍요롭고 여성스러운 향."}
+    {
+      "id": "perfume_1",
+      "name": "Morning Moss",
+      "name_kr": "모닝 모스",
+      "name_en": "Morning Moss",
+      "name_ja": "モーニングモス",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_2",
+      "name": "Citrus Bloom",
+      "name_kr": "시트러스 블룸",
+      "name_en": "Citrus Bloom",
+      "name_ja": "シトラスブルーム",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_3",
+      "name": "Sandalwood Silk",
+      "name_kr": "샌달우드 실크",
+      "name_en": "Sandalwood Silk",
+      "name_ja": "サンダルウッドシルク",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_4",
+      "name": "Linen Breeze",
+      "name_kr": "린넨 브리즈",
+      "name_en": "Linen Breeze",
+      "name_ja": "リネンブリーズ",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_5",
+      "name": "Midnight Musk",
+      "name_kr": "미드나잇 머스크",
+      "name_en": "Midnight Musk",
+      "name_ja": "ミッドナイトムスク",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_6",
+      "name": "Amber Sunset",
+      "name_kr": "앰버 선셋",
+      "name_en": "Amber Sunset",
+      "name_ja": "アンバーサンセット",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_7",
+      "name": "Fig Rain",
+      "name_kr": "피그 레인",
+      "name_en": "Fig Rain",
+      "name_ja": "フィグレイン",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_8",
+      "name": "Patchouli Night",
+      "name_kr": "파출리 나이트",
+      "name_en": "Patchouli Night",
+      "name_ja": "パチュリナイト",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_9",
+      "name": "Iris Veil",
+      "name_kr": "아이리스 베일",
+      "name_en": "Iris Veil",
+      "name_ja": "アイリスベール",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_10",
+      "name": "Bergamot Sky",
+      "name_kr": "베르가못 스카이",
+      "name_en": "Bergamot Sky",
+      "name_ja": "ベルガモットスカイ",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_11",
+      "name": "Leather Library",
+      "name_kr": "레더 라이브러리",
+      "name_en": "Leather Library",
+      "name_ja": "レザーライブラリ",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_12",
+      "name": "Sea Salt Spray",
+      "name_kr": "씨 솔트 스프레이",
+      "name_en": "Sea Salt Spray",
+      "name_ja": "シーソルトスプレー",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_13",
+      "name": "Rose Water",
+      "name_kr": "로즈 워터",
+      "name_en": "Rose Water",
+      "name_ja": "ローズウォーター",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_14",
+      "name": "Oudh Mystique",
+      "name_kr": "오드 미스티크",
+      "name_en": "Oudh Mystique",
+      "name_ja": "ウードミスティーク",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_15",
+      "name": "Vanilla Cloud",
+      "name_kr": "바닐라 클라우드",
+      "name_en": "Vanilla Cloud",
+      "name_ja": "バニラクラウド",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_16",
+      "name": "Vetiver Roots",
+      "name_kr": "베티버 루츠",
+      "name_en": "Vetiver Roots",
+      "name_ja": "ベチバールーツ",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_17",
+      "name": "Jasmine Secret",
+      "name_kr": "자스민 시크릿",
+      "name_en": "Jasmine Secret",
+      "name_ja": "ジャスミンシークレット",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_18",
+      "name": "Eucalyptus Mist",
+      "name_kr": "유칼립투스 미스트",
+      "name_en": "Eucalyptus Mist",
+      "name_ja": "ユーカリミスト",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_19",
+      "name": "Tobacco Vanilla",
+      "name_kr": "토바코 바닐라",
+      "name_en": "Tobacco Vanilla",
+      "name_ja": "タバコバニラ",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_20",
+      "name": "Lilac Garden",
+      "name_kr": "라일락 가든",
+      "name_en": "Lilac Garden",
+      "name_ja": "ライラックガーデン",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_21",
+      "name": "Cedarwood Cabin",
+      "name_kr": "시더우드 캐빈",
+      "name_en": "Cedarwood Cabin",
+      "name_ja": "シダーウッドキャビン",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_22",
+      "name": "Nerolay Glow",
+      "name_kr": "네롤리 글로우",
+      "name_en": "Nerolay Glow",
+      "name_ja": "ネロリグロウ",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_23",
+      "name": "White Tea Zen",
+      "name_kr": "화이트 티 젠",
+      "name_en": "White Tea Zen",
+      "name_ja": "ホワイトティーゼン",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_24",
+      "name": "Pink Pepper Fire",
+      "name_kr": "핑크 페퍼 파이어",
+      "name_en": "Pink Pepper Fire",
+      "name_ja": "ピンクペッパーファ이어",
+      "category": "perfume"
+    },
+    {
+      "id": "perfume_25",
+      "name": "Gardenia Petal",
+      "name_kr": "가르데니아 페탈",
+      "name_en": "Gardenia Petal",
+      "name_ja": "ガーデニアペタル",
+      "category": "perfume"
+    }
   ],
   "Flower": [
-    {"id": "flower_1", "name": "Serein Rose", "category": "flower", "description": "평온한 새벽녘의 장미처럼 당신의 마음이 피어납니다."},
-    {"id": "flower_2", "name": "Golden Tulip", "category": "flower", "description": "희망찬 금빛 튤립이 오늘 당신의 길을 밝혀줍니다."},
-    {"id": "flower_3", "name": "White Lily Grace", "category": "flower", "description": "고결한 백합의 향기가 공간 전체를 순결하게 정화합니다."},
-    {"id": "flower_4", "name": "Indigo Hydrangea", "category": "flower", "description": "차분한 보랏빛 수국이 복잡했던 생각을 잠재워 줍니다."},
-    {"id": "flower_5", "name": "Sunflower Energy", "category": "flower", "description": "해바라기의 긍정 에너지가 당신에게 강한 활력을 줍니다."},
-    {"id": "flower_6", "name": "Baby Breath Cloud", "category": "flower", "description": "작고 소중한 안개꽃 뭉치가 마음의 구름을 걷어줍니다."},
-    {"id": "flower_7", "name": "Anemone Dream", "category": "flower", "description": "바람을 닮은 아네모네가 자유로운 영감을 선사합니다."},
-    {"id": "flower_8", "name": "Peony Bloom", "category": "flower", "description": "화려한 작약의 꽃잎처럼 당신의 매력이 만개할 시간."},
-    {"id": "flower_9", "name": "Blue Daisy Heart", "category": "flower", "description": "수줍게 고개를 든 파란 데이지가 순수한 기쁨을 줍니다."},
-    {"id": "flower_10", "name": "Cherry Blossom Snow", "category": "flower", "description": "흩날리는 벚꽃잎 사이로 따스한 봄의 약속을 느낍니다."},
-    {"id": "flower_11", "name": "Wild Orchid Secret", "category": "flower", "description": "강인한 생명력을 지닌 야생 난초가 내면의 힘을 깨웁니다."},
-    {"id": "flower_12", "name": "Calla Lily Elegance", "category": "flower", "description": "유려한 곡선의 카라가 일상의 품격을 높여줍니다."},
-    {"id": "flower_13", "name": "Marigold Gold", "category": "flower", "description": "반드시 올 행복을 상징하는 메리골드가 당신을 축복합니다."},
-    {"id": "flower_14", "name": "Poppy Red Passion", "category": "flower", "description": "강렬한 양귀비의 붉은 빛이 열정에 불을 지핍니다."},
-    {"id": "flower_15", "name": "Freesia Morning", "category": "flower", "description": "노란 프리지아의 싱그러운 향기가 상쾌한 아침을 엽니다."},
-    {"id": "flower_16", "name": "Ranunculus Layer", "category": "flower", "description": "겹겹이 쌓인 라넌큘러스 꽃잎처럼 깊은 지혜가 쌓입니다."},
-    {"id": "flower_17", "name": "Lavender Field", "category": "flower", "description": "끝없이 펼쳐진 라벤더 밭의 평온함이 영혼을 치유합니다."},
-    {"id": "flower_18", "name": "Lotus Purity", "category": "flower", "description": "진흙에서 피어난 연꽃처럼 역경 속에서도 맑게 빛납니다."},
-    {"id": "flower_19", "name": "Carnation Love", "category": "flower", "description": "따뜻한 사랑과 감사의 마음을 카네이션에 담아 보냅니다."},
-    {"id": "flower_20", "name": "Cosmos Breeze", "category": "flower", "description": "바람에 살랑이는 코스모스가 가벼운 발걸음을 재촉합니다."},
-    {"id": "flower_21", "name": "Gerbera Smile", "category": "flower", "description": "환하게 웃는 거베라가 오늘 하루 당신의 미소가 되어줍니다."},
-    {"id": "flower_22", "name": "Magnolia Classic", "category": "flower", "description": "커다란 목련 꽃망울이 고전적인 아름다움을 일깨웁니다."},
-    {"id": "flower_23", "name": "Statice Memory", "category": "flower", "description": "변치 않는 스타치스처럼 소중한 기억을 간직합니다."},
-    {"id": "flower_24", "name": "Lily of the Valley", "category": "flower", "description": "틀림없이 행복해질 것이라는 은방울꽃의 속삭임."},
-    {"id": "flower_25", "name": "Snowdrop Hope", "category": "flower", "description": "추운 겨울을 이기고 핀 설강화가 희망의 메시지를 줍니다."}
+    {
+      "id": "flower_1",
+      "name": "Serein Rose",
+      "name_kr": "세레인 로즈",
+      "name_en": "Serein Rose",
+      "name_ja": "セレインローズ",
+      "category": "flower"
+    },
+    {
+      "id": "flower_2",
+      "name": "Golden Tulip",
+      "name_kr": "골든 튤립",
+      "name_en": "Golden Tulip",
+      "name_ja": "ゴールデンチューリップ",
+      "category": "flower"
+    },
+    {
+      "id": "flower_3",
+      "name": "White Lily Grace",
+      "name_kr": "화이트 릴리 그레이스",
+      "name_en": "White Lily Grace",
+      "name_ja": "ホワイトリリーグレイス",
+      "category": "flower"
+    },
+    {
+      "id": "flower_4",
+      "name": "Indigo Hydrangea",
+      "name_kr": "인디고 수국",
+      "name_en": "Indigo Hydrangea",
+      "name_ja": "インディゴ紫陽花",
+      "category": "flower"
+    },
+    {
+      "id": "flower_5",
+      "name": "Sunflower Energy",
+      "name_kr": "썬플라워 에너지",
+      "name_en": "Sunflower Energy",
+      "name_ja": "サンフラワーエネルギー",
+      "category": "flower"
+    },
+    {
+      "id": "flower_6",
+      "name": "Baby Breath Cloud",
+      "name_kr": "안개꽃 클라우드",
+      "name_en": "Baby Breath Cloud",
+      "name_ja": "かすみ草クラウド",
+      "category": "flower"
+    },
+    {
+      "id": "flower_7",
+      "name": "Anemone Dream",
+      "name_kr": "아네모네 드림",
+      "name_en": "Anemone Dream",
+      "name_ja": "アネモネドリーム",
+      "category": "flower"
+    },
+    {
+      "id": "flower_8",
+      "name": "Peony Bloom",
+      "name_kr": "피오니 블룸",
+      "name_en": "Peony Bloom",
+      "name_ja": "ピオニーブルーム",
+      "category": "flower"
+    },
+    {
+      "id": "flower_9",
+      "name": "Blue Daisy Heart",
+      "name_kr": "블루 데이지 하트",
+      "name_en": "Blue Daisy Heart",
+      "name_ja": "ブルーデイジーハート",
+      "category": "flower"
+    },
+    {
+      "id": "flower_10",
+      "name": "Cherry Blossom Snow",
+      "name_kr": "체리 블로섬 스노우",
+      "name_en": "Cherry Blossom Snow",
+      "name_ja": "桜スノー",
+      "category": "flower"
+    },
+    {
+      "id": "flower_11",
+      "name": "Wild Orchid Secret",
+      "name_kr": "와일드 오키드 시크릿",
+      "name_en": "Wild Orchid Secret",
+      "name_ja": "ワイルドオーキッドシークレット",
+      "category": "flower"
+    },
+    {
+      "id": "flower_12",
+      "name": "Calla Lily Elegance",
+      "name_kr": "카라 릴리 엘레강스",
+      "name_en": "Calla Lily Elegance",
+      "name_ja": "カラーリリーエレガンス",
+      "category": "flower"
+    },
+    {
+      "id": "flower_13",
+      "name": "Marigold Gold",
+      "name_kr": "메리골드 골드",
+      "name_en": "Marigold Gold",
+      "name_ja": "マリーゴールドゴールド",
+      "category": "flower"
+    },
+    {
+      "id": "flower_14",
+      "name": "Poppy Red Passion",
+      "name_kr": "포피 레드 패션",
+      "name_en": "Poppy Red Passion",
+      "name_ja": "ポピーレッドパッション",
+      "category": "flower"
+    },
+    {
+      "id": "flower_15",
+      "name": "Freesia Morning",
+      "name_kr": "프리지아 모닝",
+      "name_en": "Freesia Morning",
+      "name_ja": "フリージアモーニング",
+      "category": "flower"
+    },
+    {
+      "id": "flower_16",
+      "name": "Ranunculus Layer",
+      "name_kr": "라넌큘러스 레이어",
+      "name_en": "Ranunculus Layer",
+      "name_ja": "ラナンキュラスレイヤー",
+      "category": "flower"
+    },
+    {
+      "id": "flower_17",
+      "name": "Lavender Field",
+      "name_kr": "라벤더 필드",
+      "name_en": "Lavender Field",
+      "name_ja": "ラベンダーフィールド",
+      "category": "flower"
+    },
+    {
+      "id": "flower_18",
+      "name": "Lotus Purity",
+      "name_kr": "로터스 퓨리티",
+      "name_en": "Lotus Purity",
+      "name_ja": "ロータスピュリティ",
+      "category": "flower"
+    },
+    {
+      "id": "flower_19",
+      "name": "Carnation Love",
+      "name_kr": "카네이션 러브",
+      "name_en": "Carnation Love",
+      "name_ja": "カーネーションラブ",
+      "category": "flower"
+    },
+    {
+      "id": "flower_20",
+      "name": "Cosmos Breeze",
+      "name_kr": "코스모스 브리즈",
+      "name_en": "Cosmos Breeze",
+      "name_ja": "コスモスブリーズ",
+      "category": "flower"
+    },
+    {
+      "id": "flower_21",
+      "name": "Gerbera Smile",
+      "name_kr": "거베라 스마일",
+      "name_en": "Gerbera Smile",
+      "name_ja": "ガーベラスマイル",
+      "category": "flower"
+    },
+    {
+      "id": "flower_22",
+      "name": "Magnolia Classic",
+      "name_kr": "매그놀리아 클래식",
+      "name_en": "Magnolia Classic",
+      "name_ja": "マグノリアクラシック",
+      "category": "flower"
+    },
+    {
+      "id": "flower_23",
+      "name": "Statice Memory",
+      "name_kr": "스타치스 메모리",
+      "name_en": "Statice Memory",
+      "name_ja": "スターチスメモリー",
+      "category": "flower"
+    },
+    {
+      "id": "flower_24",
+      "name": "Lily of the Valley",
+      "name_kr": "은방울꽃",
+      "name_en": "Lily of the Valley",
+      "name_ja": "スズラン",
+      "category": "flower"
+    },
+    {
+      "id": "flower_25",
+      "name": "Snowdrop Hope",
+      "name_kr": "스노우드롭 호프",
+      "name_en": "Snowdrop Hope",
+      "name_ja": "スノードロップホープ",
+      "category": "flower"
+    }
   ]
 }

@@ -93,7 +93,7 @@ const App: React.FC = () => {
         const p = PERFUMES[indices[2]];
         const f = FLOWERS[indices[3]];
 
-        const commentary = getLocalCommentary(t.id, a.id, p.id, f.id);
+        const commentary = getLocalCommentary(t.id, a.id, p.id, f.id, lang);
         const score = 80 + Math.floor(Math.random() * 20);
 
         setResult({ tea: t, activity: a, perfume: p, flower: f, score, aiCommentary: commentary });
@@ -109,7 +109,8 @@ const App: React.FC = () => {
 
         // AI 쇼핑 추천 엔진 가동
         setIsLoadingItem(true);
-        getRealtimeShoppingItems(t.name, a.name, p.name, f.name).then(item => {
+        // Pass language to Gemini service
+        getRealtimeShoppingItems(t.name, a.name, p.name, f.name, lang).then(item => {
           setShoppingItem(item);
           setIsLoadingItem(false);
         });
@@ -177,14 +178,10 @@ const App: React.FC = () => {
                 <svg className="w-8 h-8 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg>
               </div>
               <h4 className="text-xl font-serif font-bold text-slate-800 mb-2">
-                {lang === 'KR' ? '오늘의 에너지를 다 썼어요' : lang === 'EN' ? 'Out of Energy' : '本日のエネルギーを使い果たしました'}
+                {translations[lang].out_of_energy}
               </h4>
               <p className="text-sm text-slate-500 break-keep leading-relaxed">
-                {lang === 'KR'
-                  ? '충전이 필요해요. 내일 새로운 인연으로 다시 만나요!'
-                  : lang === 'EN'
-                    ? 'Recharge needed. Let\'s meet again tomorrow with some new ritual!'
-                    : '充電が必要です。明日、また新しい縁でお会いしましょう！'}
+                {translations[lang].recharge_needed}
               </p>
             </div>
           )}
@@ -215,7 +212,7 @@ const App: React.FC = () => {
                 <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
                 {lang === 'KR' ? '인연을 맺는 중...' : lang === 'EN' ? 'Connecting...' : '縁を結んでいます...'}
               </span>
-            ) : isLimitReached ? (lang === 'KR' ? '에너지 충전 중...' : 'Recharging...') : translations[lang].spin_btn}
+            ) : isLimitReached ? translations[lang].recharging : translations[lang].spin_btn}
           </button>
         </section>
 
@@ -239,7 +236,7 @@ const App: React.FC = () => {
                     <img
                       src={item.data.imageUrl}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                      alt={item.data.name}
+                      alt={lang === 'KR' ? item.data.name_kr : lang === 'EN' ? item.data.name_en : item.data.name_ja}
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-1544733422-251e539cae21?auto=format&fit=crop&w=400&q=80`;
                       }}
@@ -247,7 +244,9 @@ const App: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
                     <div className="absolute bottom-5 left-5 text-left">
                       <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest mb-1">{item.tag}</p>
-                      <p className="text-lg font-serif font-semibold text-white tracking-tight leading-tight">{item.data.name}</p>
+                      <p className="text-lg font-serif font-semibold text-white tracking-tight leading-tight">
+                        {lang === 'KR' ? item.data.name_kr : lang === 'EN' ? item.data.name_en : item.data.name_ja}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -314,9 +313,7 @@ const App: React.FC = () => {
                           {lang === 'KR' ? '쿠팡에서 바로 구매하기 ➔' : lang === 'EN' ? 'Check on Shop ➔' : 'ショップで確認する ➔'}
                         </a>
                         <p className="text-[9px] text-slate-400 text-center px-4 leading-normal">
-                          {lang === 'KR'
-                            ? '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.'
-                            : 'This contains affiliate links. We may receive a commission for purchases made through these links.'}
+                          {translations[lang].affiliate_disclosure}
                         </p>
                       </div>
                     </div>
@@ -328,7 +325,7 @@ const App: React.FC = () => {
             </div>
 
             <button onClick={() => setSlotState(SlotState.IDLE)} className="w-full py-16 text-slate-300 font-bold text-[11px] tracking-[0.6em] uppercase hover:text-pink-400 transition-all">
-              Restart Ritual
+              {translations[lang].restart}
             </button>
           </div>
         )}
@@ -337,7 +334,7 @@ const App: React.FC = () => {
       <footer className="mt-10 py-10 px-8 text-center border-t border-slate-50">
         <p className="text-[9px] font-bold text-slate-300 tracking-[0.3em] mb-4 uppercase">MOOD BLOSSOM ARCHIVE • ALL RIGHTS RESERVED</p>
         <p className="text-[8px] text-slate-200 leading-loose max-w-xs mx-auto">
-          본 웹 서비스는 사용자에게 최적의 리추얼을 제안하며, 제휴 마케팅을 통해 소정의 운영 수익을 창출할 수 있습니다.
+          {translations[lang].footer_desc}
         </p>
       </footer>
     </div>

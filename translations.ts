@@ -58,5 +58,11 @@ export const translations = {
         category_act: "ACT",
         category_scent: "PERF",
         category_bloom: "FLOW",
+        out_of_energy: "本日のエネルギーを使い果たしました",
+        recharge_needed: "充電が必要です。明日、また新しい縁でお会いしましょう！",
+        recharging: "エネルギー充電中...",
+        restart: "最初からやり直す",
+        footer_desc: "本ウェブサービスはユーザーに最適なリチュアルを提案し、アフィリエイトマーケティングを通じて所定の運営収益を創出することがあります。",
+        affiliate_disclosure: "この投稿はAmazonアソシエイト・プログラム等のアフィリエイト活動の一環として、これに応じた一定額の手数料を受け取ることがあります。"
     }
 };
