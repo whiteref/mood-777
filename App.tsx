@@ -238,6 +238,7 @@ const App: React.FC = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                       alt={lang === 'KR' ? item.data.name_kr : lang === 'EN' ? item.data.name_en : item.data.name_ja}
                       onError={(e) => {
+                        // 🚨 곰 조각상 방지: 이미지 로딩 실패 시 무조건 핑크 꽃(Verified ID)으로 대체
                         (e.target as HTMLImageElement).src = `https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=400&q=80`;
                       }}
                     />
