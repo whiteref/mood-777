@@ -1,16 +1,18 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { SlotItem } from '../types';
+import { Language } from '../translations';
 
 interface SlotReelProps {
   items: SlotItem[];
   targetIndex: number;
   isSpinning: boolean;
   onFinish: () => void;
+  lang: Language;
   delay?: number;
 }
 
-const SlotReel: React.FC<SlotReelProps> = ({ items, targetIndex, isSpinning, onFinish, delay = 0 }) => {
+const SlotReel: React.FC<SlotReelProps> = ({ items, targetIndex, isSpinning, onFinish, lang, delay = 0 }) => {
   const [offset, setOffset] = useState(0);
   const ITEM_HEIGHT = 60;
 
@@ -46,7 +48,9 @@ const SlotReel: React.FC<SlotReelProps> = ({ items, targetIndex, isSpinning, onF
             key={`${item.id}-${idx}`}
             className="h-[60px] flex items-center justify-center px-1"
           >
-            <span className="text-[13px] font-serif font-bold text-slate-700 text-center leading-tight tracking-tight">{item.name}</span>
+            <span className="text-[13px] font-serif font-bold text-slate-700 text-center leading-tight tracking-tight">
+              {lang === 'KR' ? item.name_kr : lang === 'EN' ? item.name_en : item.name_ja}
+            </span>
           </div>
         ))}
       </div>

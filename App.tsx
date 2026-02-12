@@ -196,7 +196,7 @@ const App: React.FC = () => {
               <div key={reel.label} className="space-y-3">
                 <p className="text-[10px] font-bold text-slate-400 text-center uppercase tracking-widest">{reel.label}</p>
                 <div className="slot-window rounded-[24px] p-1.5 bg-white shadow-inner">
-                  <SlotReel items={reel.list} targetIndex={indices[reel.idx]} isSpinning={slotState === SlotState.SPINNING} onFinish={handleReelFinish} delay={reel.delay} />
+                  <SlotReel items={reel.list} targetIndex={indices[reel.idx]} isSpinning={slotState === SlotState.SPINNING} onFinish={handleReelFinish} lang={lang} delay={reel.delay} />
                 </div>
               </div>
             ))}
