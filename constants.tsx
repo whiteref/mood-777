@@ -8,10 +8,10 @@ import ritualData from './ritual_data.json';
 const CLOUD_STORAGE_URL = "https://images.unsplash.com/photo-"; // 임시 Unsplash 기반 (향후 R2 연동)
 
 const CATEGORY_KEYWORDS: Record<string, string> = {
-  tea: "herbal,tea,cup,organic",
-  activity: "yoga,meditation,wellness,zen",
-  perfume: "perfume,scent,luxury,fragrance",
-  flower: "flower,bloom,aesthetic,nature"
+  tea: "herbal,tea,cup,pink,aesthetic",
+  activity: "yoga,meditation,wellness,pink,relax",
+  perfume: "perfume,luxury,pink,bottle",
+  flower: "flower,pink,bloom,aesthetic"
 };
 
 const mapToSlotItem = (items: any[]): SlotItem[] => {

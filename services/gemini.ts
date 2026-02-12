@@ -45,7 +45,8 @@ export const generateConsistentImage = async (itemName: string): Promise<string 
   }
 
   // AI 이미지 생성 실패 시 또는 키워드 보강을 위해 여성용 핑크 화장품 세트 이미지 반환
-  return `https://loremflickr.com/800/800/cosmetic,pink,luxury,skincare,skincareset/all`;
+  // [보안] 곰 조각상 등 부적절한 이미지 방지를 위해 안정적인 Unsplash 고정 URL 사용
+  return `https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?auto=format&fit=crop&w=800&q=80`;
 };
 
 /**
@@ -83,7 +84,7 @@ export const getRealtimeShoppingItems = async (
     };
     return {
       ...fallbacks[lang],
-      itemImageUrl: "https://loremflickr.com/800/800/skincare,cosmetic,pink,aesthetic/all"
+      itemImageUrl: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80"
     };
   }
 
@@ -97,9 +98,9 @@ export const getRealtimeShoppingItems = async (
 
     const prompt = `당신은 럭셔리 라이프스타일 큐레이터입니다. 사용자가 선택한 리추얼 조합(${tea}, ${activity}, ${perfume}, ${flower})에 어울리는 '행운의 오브제' 한 가지를 추천해 주세요. 
     
-    [중요 지침]
+    [중요 지침 - 필독]
     1. 반드시 '여성스럽고', '핑크빛 테마'의 프리미엄 화장품이나 인테리어 소품(예: 로즈 퀄츠 롤러, 핑크 무드등, 실크 슬립 등) 중에서 추천하세요. 
-    2. 중후하거나 딱딱한 조각상(곰, 사자 등)은 절대로 추천하지 마세요.
+    2. 중후하거나 딱딱한 조각상(곰, 사자, 고양이 동상 등 모든 형태의 조형물)은 절대로 추천하지 마세요. (매우 중요)
     3. 모든 응답은 우아하고 품격 있는 톤앤매너를 유지하세요.
     
     ${langInstructions[lang]}
@@ -161,7 +162,7 @@ export const getRealtimeShoppingItems = async (
     };
     return {
       ...errorFallbacks[lang],
-      itemImageUrl: `https://loremflickr.com/800/800/skincare,pink,aesthetic/all`
+      itemImageUrl: `https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80`
     };
   }
 };
